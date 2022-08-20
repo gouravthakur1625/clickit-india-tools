@@ -2,8 +2,16 @@ import http
 from django.shortcuts import render, HttpResponse
 
 # Create your views here.
+def test(request):
+    context = {
+        "var1" : 21, 
+
+    }
+    return render(request, "test.html", context)
+
 def index(request):
-    return HttpResponse("this is home page")
+    return render(request, "index.html")
+    # return HttpResponse("this is home page")
 
 def about(request):
     return HttpResponse("this is about page")
